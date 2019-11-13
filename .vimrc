@@ -20,7 +20,7 @@ set gdefault
 " Use UTF-8 without BOM
 set encoding=utf-8 nobomb
 " Change mapleader
-let mapleader=","
+let mapleader = "\<Space>"
 " Don’t add empty newlines at the end of files
 set binary
 set noeol
@@ -104,3 +104,7 @@ if has("autocmd")
 	" Treat .md files as Markdown
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
+
+nnoremap <Leader>/ :noh<CR>
+nnoremap <Leader>fj :silent %!python -m json.tool
+nnoremap <Leader>fx :silent %!xmllint --format --recover - 2>/dev/null
